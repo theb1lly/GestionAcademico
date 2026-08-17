@@ -9,3 +9,14 @@ C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\bin\Debug\GestionAcademi
 C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\bin\Debug\GestionAcademico.pdb
 C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.exe
 C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.pdb
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormCrearUsuario.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormCrearAsignatura.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormNuevaInscripcion.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormRegistrarCalificacion.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormReporteGeneral.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerAsignaturas.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerCalificaciones.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerDocentes.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerEstudiantes.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerInscripciones.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormVerUsuarios.resources

@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 64);
+            this.label1.Location = new System.Drawing.Point(103, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 0;
@@ -47,15 +47,15 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(152, 64);
+            this.txtUsuario.Location = new System.Drawing.Point(187, 99);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(111, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(155, 26);
             this.txtUsuario.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 113);
+            this.label2.Location = new System.Drawing.Point(75, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 2;
@@ -63,15 +63,15 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(152, 110);
+            this.txtPassword.Location = new System.Drawing.Point(187, 145);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(111, 26);
+            this.txtPassword.Size = new System.Drawing.Size(155, 26);
             this.txtPassword.TabIndex = 3;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(321, 218);
+            this.btnIngresar.Location = new System.Drawing.Point(321, 234);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(86, 44);
             this.btnIngresar.TabIndex = 4;
@@ -92,6 +92,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio De Seccion";
             this.Enter += new System.EventHandler(this.btnIngresar_Click);
             this.ResumeLayout(false);

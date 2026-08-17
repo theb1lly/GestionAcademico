@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using GestionAcademico.Modelos;
+
+namespace GestionAcademico
+{
+    public partial class HomeForm : Form
+    {
+        private Usuario usuarioActual;
+
+        public HomeForm(Usuario usuario)
+        {
+            InitializeComponent();
+
+            // Habilitar como contenedor MDI para que otros formularios puedan asignar MdiParent = this
+            this.IsMdiContainer = true;
+
+            // Guardamos el usuario que inició sesión
+            usuarioActual = usuario;
+
+            // Cambiamos el título según el rol
+            this.Text = "Sistema de Gestión Académica - " + usuarioActual.Rol;
+
+            // Configuramos los menús según el rol
+            ConfigurarMenuSegunRol();
+        }
+
+        private void ConfigurarMenuSegunRol()
+        {
+            switch (usuarioActual.Rol)
+            {
+                case "Administrador":
+                    break;
+
+                case "Docente":
+                    menuUsuarios.Visible = false;
+                    menuAsignaturas.Visible = false;
+                    menuInscripciones.Visible = false;
+                    menuReportes.Visible = false;
+                    break;
+
+                case "Estudiante":
+                    menuUsuarios.Visible = false;
+                    menuAsignaturas.Visible = false;
+                    menuCalificaciones.Visible = false;
+                    menuReportes.Visible = false;
+                    break;
+            }
+        }
+
+        private void menuUsuarios_Click(object sender, EventArgs e)
+        {
+            // Buscar si el formulario ya está abierto
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormCrearUsuario)
+                {
+                    // Si está minimizado, restaurarlo
+                    if (formulario.WindowState == FormWindowState.Minimized)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+
+                    // Llevarlo al frente
+                    formulario.Activate();
+
+                    return;
+                }
+            }
+
+            // Si no está abierto, crear una nueva ventana
+            FormCrearUsuario crearUsuario = new FormCrearUsuario();
+
+            // Hacer que HomeForm sea su formulario padre
+            crearUsuario.MdiParent = this;
+
+            // Mostrarlo dentro de HomeForm
+            crearUsuario.Show();
+        }
+    }
+}

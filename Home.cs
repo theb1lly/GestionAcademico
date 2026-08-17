@@ -19,6 +19,9 @@ namespace GestionAcademico
         {
             InitializeComponent();
 
+            // Habilitar como contenedor MDI para que otros formularios puedan asignar MdiParent = this
+            this.IsMdiContainer = true;
+
             // Guardamos el usuario que inició sesión
             usuarioActual = usuario;
 
@@ -34,46 +37,222 @@ namespace GestionAcademico
             switch (usuarioActual.Rol)
             {
                 case "Administrador":
-
-                    // El administrador puede ver todo
+                    // Ve todo, no se oculta nada
                     break;
 
                 case "Docente":
-
+                    // Menús principales que NO puede usar
                     menuUsuarios.Visible = false;
-                    menuEstudiantesDocentes.Visible = false;
                     menuAsignaturas.Visible = false;
                     menuInscripciones.Visible = false;
                     menuReportes.Visible = false;
-
-                    // Calificaciones y Consultas permanecen visibles
+                    // menuCalificaciones queda visible (puede registrar notas)
+                    // menuConsultas queda visible, pero limitamos qué puede ver adentro:
+                    verUsuariosToolStripMenuItem.Visible = false;
+                    verDocentesToolStripMenuItem.Visible = false;
+                    // Ver Estudiantes, Ver Asignaturas, Ver Inscripciones, Ver Calificaciones quedan visibles
                     break;
 
                 case "Estudiante":
-
+                    // Menús principales que NO puede usar
                     menuUsuarios.Visible = false;
-                    menuEstudiantesDocentes.Visible = false;
                     menuAsignaturas.Visible = false;
                     menuCalificaciones.Visible = false;
                     menuReportes.Visible = false;
-
-                    // Inscripciones y Consultas permanecen visibles
-                    break;
-
-                default:
-
-                    // Si el usuario no tiene un rol reconocido,
-                    // ocultamos todos los menús sensibles.
-                    menuUsuarios.Visible = false;
-                    menuEstudiantesDocentes.Visible = false;
-                    menuAsignaturas.Visible = false;
-                    menuInscripciones.Visible = false;
-                    menuCalificaciones.Visible = false;
-                    menuReportes.Visible = false;
-                    menuConsultas.Visible = false;
-
+                    // menuInscripciones queda visible (se inscribe a sí mismo)
+                    // menuConsultas queda visible, pero limitamos qué puede ver adentro:
+                    verUsuariosToolStripMenuItem.Visible = false;
+                    verEstudiantesToolStripMenuItem.Visible = false;
+                    verDocentesToolStripMenuItem.Visible = false;
+                    // Ver Asignaturas, Ver Inscripciones, Ver Calificaciones quedan visibles
                     break;
             }
+        }
+
+        private void menuUsuarios_Click(object sender, EventArgs e)
+        {
+            // Buscar si el formulario ya está abierto
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormCrearUsuario)
+                {
+                    // Si está minimizado, restaurarlo
+                    if (formulario.WindowState == FormWindowState.Minimized)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+
+                    // Llevarlo al frente
+                    formulario.Activate();
+
+                    return;
+                }
+            }
+
+            // Si no está abierto, crear una nueva ventana
+            FormCrearUsuario crearUsuario = new FormCrearUsuario();
+
+            // Hacer que HomeForm sea su formulario padre
+            crearUsuario.MdiParent = this;
+
+            // Mostrarlo dentro de HomeForm
+            crearUsuario.Show();
+        }
+
+        private void menuAsignaturas_Click(object sender, EventArgs e)
+        {
+            // Buscar si el formulario ya está abierto
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario is FormCrearAsignatura)
+                {
+                    // Si está minimizado, restaurarlo
+                    if (formulario.WindowState == FormWindowState.Minimized)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+
+                    // Llevarlo al frente
+                    formulario.Activate();
+
+                    return;
+                }
+            }
+
+            // Si no está abierto, crear una nueva ventana
+            FormCrearAsignatura crearAsignaturas = new FormCrearAsignatura();
+
+            // Hacer que HomeForm sea su formulario padre
+            crearAsignaturas.MdiParent = this;
+
+            // Mostrarlo dentro de HomeForm
+            crearAsignaturas.Show();
+        }
+
+        private void menuInscripciones_Click(object sender, EventArgs e)
+        {
+            {
+                // Buscar si el formulario ya está abierto
+                foreach (Form formulario in this.MdiChildren)
+                {
+                    if (formulario is FormNuevaInscripcion)
+                    {
+                        // Si está minimizado, restaurarlo
+                        if (formulario.WindowState == FormWindowState.Minimized)
+                        {
+                            formulario.WindowState = FormWindowState.Normal;
+                        }
+
+                        // Llevarlo al frente
+                        formulario.Activate();
+
+                        return;
+                    }
+                }
+
+                // Si no está abierto, crear una nueva ventana
+                FormNuevaInscripcion crearAsignaturas = new FormNuevaInscripcion();
+
+                // Hacer que HomeForm sea su formulario padre
+                crearAsignaturas.MdiParent = this;
+
+                // Mostrarlo dentro de HomeForm
+                crearAsignaturas.Show();
+            }
+        }
+
+        private void menuCalificaciones_Click(object sender, EventArgs e)
+        {
+            {
+                // Buscar si el formulario ya está abierto
+                foreach (Form formulario in this.MdiChildren)
+                {
+                    if (formulario is FormRegistrarCalificacion)
+                    {
+                        // Si está minimizado, restaurarlo
+                        if (formulario.WindowState == FormWindowState.Minimized)
+                        {
+                            formulario.WindowState = FormWindowState.Normal;
+                        }
+
+                        // Llevarlo al frente
+                        formulario.Activate();
+
+                        return;
+                    }
+                }
+
+                // Si no está abierto, crear una nueva ventana
+                FormRegistrarCalificacion crearAsignaturas = new FormRegistrarCalificacion();
+
+                // Hacer que HomeForm sea su formulario padre
+                crearAsignaturas.MdiParent = this;
+
+                // Mostrarlo dentro de HomeForm
+                crearAsignaturas.Show();
+            }
+        }
+
+        private void menuReportes_Click(object sender, EventArgs e)
+        {
+            {
+                // Buscar si el formulario ya está abierto
+                foreach (Form formulario in this.MdiChildren)
+                {
+                    if (formulario is FormReporteGeneral)
+                    {
+                        // Si está minimizado, restaurarlo
+                        if (formulario.WindowState == FormWindowState.Minimized)
+                        {
+                            formulario.WindowState = FormWindowState.Normal;
+                        }
+
+                        // Llevarlo al frente
+                        formulario.Activate();
+
+                        return;
+                    }
+                }
+
+                // Si no está abierto, crear una nueva ventana
+                FormReporteGeneral crearAsignaturas = new FormReporteGeneral();
+
+                // Hacer que HomeForm sea su formulario padre
+                crearAsignaturas.MdiParent = this;
+
+                // Mostrarlo dentro de HomeForm
+                crearAsignaturas.Show();
+            }
+        }
+
+        private void verUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerUsuarios().Show();
+        }
+
+        private void verEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerEstudiantes().Show();
+        }
+
+        private void verDocentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerDocentes().Show();
+        }
+
+        private void verAsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerAsignaturas().Show();
+        }
+
+        private void verInscripcionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerInscripciones().Show();
+        }
+
+        private void verCalificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormVerCalificaciones().Show();
         }
     }
 }
