@@ -1,0 +1,11 @@
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.csproj.AssemblyReference.cache
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.FormLogin.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.HomeForm.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.Properties.Resources.resources
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.csproj.GenerateResource.cache
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.csproj.CoreCompileInputs.cache
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\bin\Debug\GestionAcademico.exe.config
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\bin\Debug\GestionAcademico.exe
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\bin\Debug\GestionAcademico.pdb
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.exe
+C:\Users\bilyg\Documents\Visual Studio\GestionAcademico\obj\Debug\GestionAcademico.pdb
